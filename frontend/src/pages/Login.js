@@ -17,10 +17,10 @@ function Login() {
     try {
       const res = await API.post("/auth/login", form);
 
-      // Example: handle mustChangePassword flag from backend
+      // Handle backend flags first
       if (res.data.mustChangePassword) {
         alert("You must change your password.");
-        navigate("/change-password"); // or wherever your password reset page is
+        navigate("/change-password");
         return;
       }
 
@@ -35,7 +35,7 @@ function Login() {
 
   return (
     <Container maxWidth="sm">
-      <Typography variant="h5">Login</Typography>
+      <Typography variant="h5" sx={{ mb: 2 }}>Login</Typography>
       <form onSubmit={handleSubmit}>
         <TextField
           fullWidth
@@ -52,7 +52,7 @@ function Login() {
           margin="normal"
           onChange={handleChange}
         />
-        <Button type="submit" variant="contained">
+        <Button type="submit" variant="contained" sx={{ mt: 2 }}>
           Login
         </Button>
       </form>
