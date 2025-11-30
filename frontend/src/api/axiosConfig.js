@@ -30,9 +30,19 @@ const API = axios.create({
 });
 */
 
+/*
 const API = axios.create({
   baseURL: process.env.REACT_APP_API_URL || "http://backend:5000/api",
 });
+*/
+
+const API = axios.create({
+  baseURL:
+    window.location.hostname === "localhost"
+      ? "http://localhost:5000/api"             // Local backend
+      : "https://comp3123-backend5.onrender.com", // Deployed backend
+});
+
 
 // Attach JWT automatically with safety
 API.interceptors.request.use(

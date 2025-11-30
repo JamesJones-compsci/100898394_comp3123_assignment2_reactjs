@@ -26,9 +26,9 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Login function
-  const login = (token, userData) => {
-    if (!token || !userData) return;
+  // Login function (userData is now optional)
+  const login = (token, userData = {}) => {
+    if (!token) return;
     try {
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(userData));

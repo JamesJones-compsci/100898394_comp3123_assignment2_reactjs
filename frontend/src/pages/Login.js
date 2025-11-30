@@ -25,8 +25,9 @@ function Login() {
       }
 
       // Normal login flow
-      login(res.data.token, res.data.user);
-      navigate("/dashboard");
+      login(res.data.token); // <-- FIXED (removed res.data.user)
+      navigate("/dashboard"); // this will work now
+
     } catch (err) {
       console.error("Login failed:", err);
       alert(err.response?.data?.message || "Login failed");
