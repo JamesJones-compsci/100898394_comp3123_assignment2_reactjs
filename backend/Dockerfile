@@ -10,11 +10,11 @@ COPY package*.json ./
 # Install dependencies (production only)
 RUN npm install --only=prod
 
-# Copy the rest of the backend code
+# Copy all backend files
 COPY . .
 
-# Expose port (Render assigns dynamic port via PORT env)
+# Expose port (Render will assign the real PORT via environment variable)
 EXPOSE 5000
 
-# Start the server with production script
-CMD ["npm", "start"]
+# Start the server
+CMD ["node", "server.js"]
