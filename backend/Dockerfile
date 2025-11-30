@@ -1,19 +1,19 @@
 # Use Node.js 18
 FROM node:18
 
-# Set working directory
+# Set working directory inside container
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Copy backend package.json and package-lock.json
+COPY backend/package*.json ./
 
 # Install dependencies (production only)
 RUN npm install --only=prod
 
-# Copy all backend files
-COPY . .
+# Copy all backend code into /app
+COPY backend/ ./
 
-# Expose port (Render will assign the real PORT via environment variable)
+# Expose port (Render will override PORT environment variable)
 EXPOSE 5000
 
 # Start the server
