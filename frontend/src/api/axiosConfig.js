@@ -52,7 +52,7 @@ const API = axios.create({
       : "https://comp3123-backend5.onrender.com", // Add `/api` here
 });
 
-// Attach JWT automatically with safety
+// Attach JWT automatically with safety  
 API.interceptors.request.use(
   (req) => {
     try {
