@@ -33,7 +33,7 @@ function Signup() {
 
     try {
       // Call backend signup API
-      await API.post("/auth/register", form);
+      await API.post("auth/register", form);
       // On success, redirect to login page
       navigate("/login");
     } catch (err) {
