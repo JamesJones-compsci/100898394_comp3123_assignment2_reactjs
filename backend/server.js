@@ -17,7 +17,7 @@ app.use(cors());
 */
 
 app.use(cors({
-  origin: ["http://localhost:3000", "https://your-frontend.vercel.app"], // replace with your Vercel URL
+  origin: ["http://localhost:3000", "100898394-comp3123-assignment2-reactjs-e6vd-ag57cawpl.vercel.app"], // replace with your Vercel URL
   credentials: true
 }));
 
